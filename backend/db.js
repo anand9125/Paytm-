@@ -6,7 +6,7 @@
 const mongoose = require("mongoose")
 mongoose.connect("mongodb+srv://akdon9936:,,dslG4QYRbFvsE6fu,,KmY055CYjQ6NjZJL,,@cluster0.0vifew6.mongodb.net/")
 const userSchema = mongoose.Schema({
-    userName :{
+    username :{
        type :String,
        required :true,
        unique:true,
@@ -15,7 +15,7 @@ const userSchema = mongoose.Schema({
        minLength : 3,
        maxLength: 30
     },
-    passWord:{
+    password:{
         type :String,
         required :true,
         unique:true,
@@ -35,7 +35,7 @@ const userSchema = mongoose.Schema({
         maxLength:50
     }
 })
-const  user = mongoose.model("user" ,userSchema)
+const  User = mongoose.model("user" ,userSchema)
 module.exports={
-    user
+    User
 }
