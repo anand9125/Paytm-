@@ -1,15 +1,17 @@
 const express = require("express");
-const mainRouter = require("./routess/index")
-const userRouter = require("./routess/user")
-const cors = require('cors')
-app.use(cors())
-const bodyParser = require("body-parser")
-app.use(bodyParser.json())
 const app = express();
-app.use("/api/v1" ,mainRouter)
-app.use("/api/vi/user" ,userRouter)
+const mainRouter = require("./routess/index");
+const userRouter = require("./routess/user");
+const bodyParser = require("body-parser");
+const cors = require("cors");
 
+app.use(cors());
+app.use(bodyParser.json());
 
+app.use("/api/v1", mainRouter);       // Correct version
+app.use("/api/v1/user", userRouter);   // Correct version
+ 
 
-
-app.listen(3000);
+app.listen(3000, () => {
+  console.log('Server is running on port 3000');
+});

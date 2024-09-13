@@ -4,7 +4,7 @@
  //Allow user to update their information (firstName, lastName, passwor
 // backend/db.js
 const mongoose = require("mongoose")
-mongoose.connect("mongodb+srv://akdon9936:,,dslG4QYRbFvsE6fu,,KmY055CYjQ6NjZJL,,@cluster0.0vifew6.mongodb.net/")
+mongoose.connect("mongodb+srv://akdon9936:d0T1uwh4HIzFDKow@cluster0.0vifew6.mongodb.net/")
 const userSchema = mongoose.Schema({
     username :{
        type :String,
@@ -22,7 +22,7 @@ const userSchema = mongoose.Schema({
         trim:true,
         minLength :6
     },
-    firsrName :{
+    firstName :{
         type:String,
         required:true,
         trim: true,
