@@ -1,35 +1,24 @@
 import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
+import { Signup } from "./Pages/Signup";
+import{Signin} from "./Pages/Signin"
+import{Dashboard} from "./Pages/Dashboard"
+import{Send} from "./Pages/Send"
+
 
 function App() {
   return (
     <div>
-      <BrowserRouter>
-        <Appbar />
+      <BrowserRouter> 
         <Routes>
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/" element={<Landing />} />
+          <Route path="/signup" element={<Signup/>} />
+          <Route path="/signin" element={<Signin/>} />
+          <Route path="/dashboard" element={<Dashboard/>} />
+          <Route path="/send" element={<Send/>} />
         </Routes>
       </BrowserRouter>
     </div>
   );
 }
 
-function Appbar() {
-  const navigate = useNavigate();
-  return (
-    <div>
-      <button onClick={() => navigate("/")}>Landing Page</button>
-      <button onClick={() => navigate("/dashboard")}>Dashboard</button>
-    </div>
-  );
-}
-
-function Dashboard() {
-  return <div>hii there</div>;
-}
-
-function Landing() {
-  return <div>hii there</div>;
-}
 
 export default App;
